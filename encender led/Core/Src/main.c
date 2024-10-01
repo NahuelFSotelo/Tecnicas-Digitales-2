@@ -19,6 +19,7 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "string.h"
+#include "API_GPIO.H" //SE INCLUYE EL DRIVER GPIO
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -106,11 +107,20 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
-
+   uin16_t LED[] ={LD1,LD2,LD3};
+   int num_leds=3;
+   int current_led=0;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  LED_On(LED[current_led]);
+	  Hal_Delay(200);
+
+
+	  LED_off(LED[current_led]);
+	  Hal_Delay(200);
+	  current_led =(current_led + 1)% num_leds;
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
