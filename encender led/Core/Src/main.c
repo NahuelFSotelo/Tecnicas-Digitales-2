@@ -108,19 +108,20 @@ int main(void)
 
   /* USER CODE END 2 */
    uin16_t LED[] ={LD1,LD2,LD3};
-   int num_leds=3;
-   int current_led=0;
+   int num_leds_t=3;
+   int current_led_t=0;
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  LED_On(LED[current_led]);
+	  LED_On(LED[current_led_t]);
 	  Hal_Delay(200);
-
-
-	  LED_off(LED[current_led]);
+	  LED_off(LED[current_led_t]);
 	  Hal_Delay(200);
-	  current_led =(current_led + 1)% num_leds;
+	  current_led_t++; //en cada ciclo el contador aumenta//
+	        if(current_led_t==num_leds_t){  //condicion para volver al inicio una vez alcanza el maximo de led //
+	    	   current_led_t=0; //resetea el contador//
+	        }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
