@@ -273,3 +273,18 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY org.eclipse.cdt.core 1 0 2024-10-03 14:43:18.183
 !MESSAGE Indexed 'Ejemplo04_Driver_GPIO' (26 sources, 122 headers) in 3.6 sec: 13,359 declarations; 53,593 references; 6 unresolved inclusions; 1,097 syntax errors; 1,689 unresolved names (2.5%)
+!SESSION 2024-10-03 16:52:10.895 -----------------------------------------------
+eclipse.buildId=Version 1.16.1
+java.version=17.0.11
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2024-10-03 16:52:38.690
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2024-10-03 16:52:38.736
+!MESSAGE Log4j2 initialized with config file E:\tecnicas digitales 2\trabajos practicos\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2024-10-03 16:52:52.178
+!MESSAGE Started RMI Server, listening on port 41337

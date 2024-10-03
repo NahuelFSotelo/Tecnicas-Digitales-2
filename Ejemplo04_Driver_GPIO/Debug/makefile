@@ -34,34 +34,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := aplicacion-1.1
+BUILD_ARTIFACT_NAME := Ejemplo04_Driver_GPIO
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-aplicacion-1.1.elf \
+Ejemplo04_Driver_GPIO.elf \
 
 MAP_FILES += \
-aplicacion-1.1.map \
+Ejemplo04_Driver_GPIO.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-aplicacion-1.1.list \
+Ejemplo04_Driver_GPIO.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: aplicacion-1.1.elf secondary-outputs
+main-build: Ejemplo04_Driver_GPIO.elf secondary-outputs
 
 # Tool invocations
-aplicacion-1.1.elf aplicacion-1.1.map: $(OBJS) $(USER_OBJS) E:\tecnicas\ digitales\ 2\trabajos\ practicos\aplicacion-1.1\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "aplicacion-1.1.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\trabajos practicos\aplicacion-1.1\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="aplicacion-1.1.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Ejemplo04_Driver_GPIO.elf Ejemplo04_Driver_GPIO.map: $(OBJS) $(USER_OBJS) E:\tecnicas\ digitales\ 2\trabajos\ practicos\Ejemplo04_Driver_GPIO\STM32F429ZITX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Ejemplo04_Driver_GPIO.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"E:\tecnicas digitales 2\trabajos practicos\Ejemplo04_Driver_GPIO\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ejemplo04_Driver_GPIO.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -70,14 +70,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-aplicacion-1.1.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "aplicacion-1.1.list"
+Ejemplo04_Driver_GPIO.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Ejemplo04_Driver_GPIO.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) aplicacion-1.1.elf aplicacion-1.1.list aplicacion-1.1.map default.size.stdout
+	-$(RM) Ejemplo04_Driver_GPIO.elf Ejemplo04_Driver_GPIO.list Ejemplo04_Driver_GPIO.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
